@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="css/crud-view.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+<style>
+  .jumbotron {
+    background-color: rgba(82, 159, 189, 0.7);
+    padding: 0.5rem 0rem;
+    margin-bottom: 0;
+    text-align: left;
+  }
+
+  #nav {
+    background-color: black;
+  }
+
+  #nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  #nav ul li {
+    padding: 15px 20px;
+    display: inline-block;
+    border-right: 1px solid black;
+  }
+
+  #nav ul li a {
+    color: white;
+    text-decoration: none;
+  }
+
+  #footer {
+    background-color: rgba(34, 34, 34, 0.7);
+    padding: 5px;
+  }
+
+  #footer p {
+    color: white;
+    margin: 10px;
+    font-size: 16 px;
+    text-align: center;
+  }
+
+  .sidebar-content {
+    background-color: goldenrod;
+    min-width: 250px;
+  }
+</style>
+
+<body>
+  <script src="js/array-crud.js"></script>
+  <script src="js/array-crud-view-impl.js"></script>
+
+  <div class="jumbotron">
+    <h1 class="display-7" style="color: white">Library.net</h1>
+    <h3 class="display-7" style="color: white"> have you read a book today? </h3>
+  </div>
+  <div id="nav">
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Profil</a></li>
+      <li><a href="#">Kearsipan</a></li>
+      <li><a href="#">Berita</a></li>
+      <li><a href="#">FAQ</a></li>
+    </ul>
+  </div>
+  <div class="container">
+
+  </div>
+  </div>
+  </div>
+  <div class="container">
+    <div class="d-flex container-wrp">
+      <div class="sidebar-content">
+        <div class="row">
+          <div class="col 4">
+            <button class="button-add" style="background-color: grey" onclick="addRow()"
+              style="color: white">Add</button>
+            <table>
+              <thead>
+                <tr>
+                  <th>Id</th>
+                  <th>Book Title</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody id="table-data"></tbody>
+            </table>
+          </div>
+        </div>
+        <div id="footer">
+          <p>Copyright <span style="color: orange">Your Site</span>. All right reserved</p>
+        </div>
+
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+<body>
+
+    <div id="app">
+        <p><button v-onclick="doSomething">Click</button></p>
+        <p> Uwis dipencet {{ clickcount }} kali</p>
+        <p>{{ teks }}</p>
+    </div>
+
+    <div id="app">
+        <h1>{{ message }}</h1>
+    </div>
+    <div id="app"
+        <button-counter></button-counter>
+        <button-click :count="count" @counting="counting"></button-click>
+        </div>
+
+    <script>
+        var myObject = new Vue({
+            el: '#app',
+            data: {
+                message: 'Piye Kabare',
+                clickcount: 0,
+                teks: "goo"
+            },
+
+            methods: {
+                doSomething() {
+                    if (this.clickcount) {
+                        this.clickcount = Number(this.clickcount) + 1;
+                    } else {
+                        this.clickcount = 1;
+                    }
+                }
+            }
+        }
+        })
+        //Contoh tanpa prop
+        Vue.component('button-counter', {
+            data: function() {...
+            template: '<button v-on "click=count++"">You clicked me {{ count}} times.</button>'}
+        });
+        //Contoh penggunaan prop dan komunikasi dengan parent
+        vue.component('button-counter'), {
+            data: function () {
+                template: '<button v-on click="$emit(\counting\)">You clicked me {{count}} times.</button>'
+            });
+            var vm= new Vue({
+                el: '#app',
+                count: 0
+            })
+            methods: {
+                counting() {
+                    this.count++;
+                }
+            }
+                 }
+            }
+        }
+    </script>
+
+</body>
+
+</html>

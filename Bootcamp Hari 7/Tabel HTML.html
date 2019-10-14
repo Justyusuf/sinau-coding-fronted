@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <div id="app">
+        <h2>{{title}}</h2>
+
+        <table>
+
+            <tbody>
+                <!-- Template digunakan untuk melakukan v-for tanpa membuat element -->
+                <template v-for="(item, index) in users">
+                    <!-- Implementasi component-->
+                    <table-row :item="item" @row-click="sayHallo"></table-row>
+                </template>
+            </tbody>
+
+        </table>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        Vue.component('table-row', {
+            props: ['item'],
+            template: '<tr>' +
+                '<td>{{item.name}}</td>' +
+                '<td><button v-on:click="$emit(\'row-click\', item)">Delete</button></td>' +
+                '</tr>'
+        });
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                title: "HTML Table",
+                users: [{
+                    name: "Alfreds"
+                }, {
+                    name: "Maria"
+                }]
+            },
+            methods: {
+                sayHallo(item) {
+                    alert("Hello word i am " + item.name);
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

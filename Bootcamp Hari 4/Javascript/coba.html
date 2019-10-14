@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+
+<body>
+    <script>
+        var array = ["A", "B"]
+        array.forEach(function (item, index) {
+            console.log("foreach", index + 1, item);
+        });
+
+        var i = 0;
+        while (i < array.length) {
+            console.log("while ke", i + 1, array[i]);
+
+            i++
+        }
+        var j;
+        for (j = 0; j < array.length; j++) {
+            console.log("for ke", j + 1, array[j]);
+        }
+        //Menambahkan object mobil ke mobils
+        //Array Baru
+        var mobils = [];
+
+        //Object Baru
+        var mobil = {
+            merk: ("ABC",
+            "JIH",
+            "KLM",
+            "BBB",
+            "AAA")
+        };
+        //Menambahkan object mobil ke mobils
+        mobils.push(mobil);
+        console.log("Hasil Tambah", mobils);
+
+        //Find index dari object yang akan kita edit
+        var indexEditMObil = mobils.findIndex(function (item) {
+            return item.merk == "ABC";
+        })
+        //Kita get objectnya berdasar indexnya
+        var editMobil = mobils[indexEditMobil];
+        editMobil.merk = "XYZ";
+
+        //Log ke console dengan format string dari mobiles
+        console.log("Hasil Edit", JSON.sringfy(mobils));
+    </script>
+</body>
+
+</html>
